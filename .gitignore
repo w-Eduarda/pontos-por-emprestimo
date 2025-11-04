@@ -1,0 +1,21 @@
+# Sistema
+.env
+*.log
+__pycache__/
+node_modules/
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Python
+*.pyc
+*.pyo
+
+# Node
+npm-debug.log*
+
+# Build
+dist/
+build/
