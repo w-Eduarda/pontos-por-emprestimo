@@ -43,14 +43,6 @@ Exemplo (ajustar depois):
 - Execução dos testes e relatório de bugs
 - Apresentação final
 
-## 📅 Cronograma Sugerido
-| Semana | Entrega |
-|--------|---------|
-| 1 | Definição do recurso + requisitos |
-| 2 | Protótipo/código funcional inicial |
-| 3 | Planejamento e execução de testes |
-| 4 | Correções, documentação final e apresentação |
-
 ## 🚀 Como Rodar o Projeto
 *(Será preenchido quando a implementação for iniciada)*
 
