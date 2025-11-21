@@ -1,0 +1,12 @@
+from datetime import timedelta
+from config.settings import settings
+
+INITIAL_POINTS = 50
+CREDIT_PER_LEND = 10
+DEBIT_PER_BORROW = 5
+MIN_POINTS_TO_BORROW = 5
+MAX_ACTIVE_LOANS = 3
+LATE_FINE_PER_DAY = 1
+DEFAULT_LOAN_DAYS = 14
+
+ACCESS_TOKEN_EXPIRE = timedelta(minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES)
