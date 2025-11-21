@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P Livros - Biblioteca Compartilhada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Tela de Autenticação -->
+        <div id="auth-screen" class="screen active">
+            <div class="auth-container">
+                <h1>Biblioteca</h1>
+                <p>Empreste e pegue livros emprestados usando pontos!</p>
+
+                <div class="auth-forms">
+                    <form id="login-form" class="form-card">
+                        <h2>Login</h2>
+                        <input type="email" id="login-email" placeholder="Email" required>
+                        <input type="password" id="login-password" placeholder="Senha" required>
+                        <button type="submit" class="btn-primary">Entrar</button>
+                        <p class="switch-link" onclick="document.getElementById('register-form').classList.remove('hidden'); document.getElementById('login-form').classList.add('hidden');">Não tem conta? Cadastre-se</p>
+                    </form>
+
+                    <form id="register-form" class="form-card hidden">
+                        <h2>Cadastrar</h2>
+                        <input type="text" id="register-name" placeholder="Nome" required>
+                        <input type="email" id="register-email" placeholder="Email" required>
+                        <input type="password" id="register-password" placeholder="Senha" required>
+                        <button type="submit" class="btn-primary">Criar Conta</button>
+                        <p class="switch-link" onclick="document.getElementById('register-form').classList.add('hidden'); document.getElementById('login-form').classList.remove('hidden');">Já tem conta? Faça Login</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela Principal -->
+        <div id="main-screen" class="screen">
+            <header>
+                <div class="logo">Biblioteca</div>
+                <div class="user-info">
+                    <span id="user-email"></span> | 
+                    <span class="points">⭐ <span id="user-points">0</span> pontos</span>
+                    <button id="logout-btn" class="btn-secondary">Sair</button>
+                </div>
+            </header>
+
+            <main>
+                <nav class="tabs">
+                    <button class="tab-btn active" data-tab="books-available">Livros Disponíveis</button>
+                    <button class="tab-btn" data-tab="my-books">Meus Livros</button>
+                    <button class="tab-btn" data-tab="my-loans">Meus Empréstimos</button>
+                    <button class="tab-btn" data-tab="add-book">Cadastrar Livro</button>
+                </nav>
+
+                <div class="tab-content-container">
+                    <!-- Livros Disponíveis -->
+                    <div id="books-available" class="tab-content active">
+                        <h2>Livros Disponíveis para Empréstimo</h2>
+                        <div id="books-list" class="book-grid">
+                            <!-- Livros serão injetados aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Meus Livros -->
+                    <div id="my-books" class="tab-content">
+                        <h2>Livros que Você Cadastrou</h2>
+                        <div id="my-books-list" class="book-grid">
+                            <!-- Meus livros serão injetados aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Meus Empréstimos (Novo) -->
+                    <div id="my-loans" class="tab-content">
+                        <h2>Livros que Você Pegou Emprestado</h2>
+                        <div id="loans-list" class="book-grid">
+                            <!-- Meus empréstimos serão injetados aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Cadastrar Livro -->
+                    <div id="add-book" class="tab-content">
+                        <h2>Cadastrar Novo Livro</h2>
+                        <form id="form-add-book" class="form-card wide">
+                            <input type="text" id="book-title" placeholder="Título do Livro" required>
+                            <input type="text" id="book-author" placeholder="Autor" required>
+                            <textarea id="book-description" placeholder="Descrição (Opcional)"></textarea>
+                            <input type="number" id="book-points" placeholder="Pontos Necessários para Empréstimo" required min="1">
+                            <button type="submit" class="btn-primary">Cadastrar Livro</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Mensagens -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
